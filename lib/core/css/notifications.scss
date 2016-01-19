@@ -1,0 +1,58 @@
+body > .notifications
+{
+    z-index: 99992;
+    position: absolute;
+    top: 1em;
+    right: 0;
+
+    > .notification
+    {
+        position: relative;
+        margin: 0;
+        padding: 0 1em;
+        height: 0;
+        overflow: hidden;
+        background: #000;
+        background: rgba(#000, .66);
+        border-radius: .25em 0 0 .25em;
+        vertical-align: middle;
+        font-weight: 400;
+        font-size: 2em;
+        opacity: 0;
+        cursor: default;
+        -webkit-transition: margin .5s, height .5s, line-height .5s, opacity .5s;
+        transition: margin .5s, height .5s, line-height .5s, opacity .5s;
+
+        &.active
+        {
+            margin: 0 0 .5em;
+            height: 2.5em;
+            line-height: 2.5em;
+            opacity: 1;
+        }
+
+        &.has-icon
+        {
+            padding-left: 2.5em;
+
+            > i
+            {
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 2.5em;
+                height: 2.5em;
+                margin: -1.25em 0 0;
+                line-height: 2.5em;
+                vertical-align: middle;
+                text-align: center;
+            }
+        }
+
+        &.color-red
+        {
+            background: #BB0D00;
+        }
+    }
+}

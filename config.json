@@ -1,0 +1,33 @@
+{
+    "apps":
+    {
+        "trello":
+        {
+            "api-key": "...",
+            "lists":
+            [
+                "..."
+            ]
+        },
+        "flickr":
+        {
+            "api-key": "...",
+            "dock-hide": true,
+            "tags": ["Space"]
+        }
+    },
+    "clock":
+    {
+        "format": "H:mm<\\e\\m>:ss</\\e\\m>",
+        "weather":
+        {
+            "api-key": "...",
+            "display": 3,
+            "location": "London,UK"
+        }
+    },
+    "locale":
+    {
+        "language": "en-GB"
+    }
+}

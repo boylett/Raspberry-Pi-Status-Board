@@ -1,0 +1,55 @@
+.context-menu
+{
+    display: none;
+    z-index: 99991;
+    position: absolute;
+    width: 7.5em;
+    margin: 1em 0 0 -3.75em;
+    background: #000;
+    background: rgba(#000, .75);
+    border-radius: .25em;
+    text-align: center;
+    font-size: 2em;
+
+    &.active
+    {
+        display: block;
+    }
+
+    &:before
+    {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        margin: 0 0 0 -.5em;
+        border: .5em solid transparent;
+        border-bottom-color: #000;
+        border-bottom-color: rgba(#000, .75);
+    }
+
+    &.origin-bottom
+    {
+        margin-top: 0;
+        margin-bottom: 1em;
+
+        &:before
+        {
+            top: 100%;
+            bottom: auto;
+            border-bottom-color: transparent;
+            border-top-color: #000;
+            border-top-color: rgba(#000, .75);
+        }
+    }
+
+    > a
+    {
+        display: block;
+        padding: .66em 0;
+        font-weight: 500;
+        cursor: pointer;
+    }
+}

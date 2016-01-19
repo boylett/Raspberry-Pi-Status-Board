@@ -1,0 +1,262 @@
+/* Springboard
+ */
+
+.springboard
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    cursor: default;
+
+    /* Dock
+     */
+
+    > .dock
+    {
+        z-index: 9999;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        -webkit-transition: bottom .25s;
+        transition: bottom .25s;
+
+        &:before, &:after
+        {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            -webkit-transition: background .5s;
+            transition: background .5s;
+        }
+
+        &:after
+        {
+            z-index: 2;
+            background: #555;
+            background: rgba(#000, .5);
+        }
+
+        > .menu
+        {
+            position: relative;
+            z-index: 3;
+            padding: 1.75em 2.25em 1.5em;
+            font-size: 2.25em;
+
+            &:after
+            {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            > .menu-item
+            {
+                display: inline-block;
+                margin: 0 .66em;
+                vertical-align: middle;
+                cursor: pointer;
+
+                &.right
+                {
+                    float: right;
+                }
+
+                > i, > em > i
+                {
+                    font-family: 'FontAwesome';
+                    font-size: 1.4em;
+                    line-height: 1em;
+                    vertical-align: middle;
+                    opacity: .66;
+                    -webkit-transition: opacity .33s;
+                    transition: opacity .33s;
+                }
+
+                > em
+                {
+                    display: inline-block;
+                    border-radius: .2em .9em .9em .2em;
+
+                    > b
+                    {
+                        display: none;
+                    }
+                }
+
+                > font
+                {
+                    display: inline-block;
+                    margin: 0 .66em;
+                    font-weight: 400;
+                    line-height: 1.45em;
+                    vertical-align: middle;
+                    color: #FFF;
+                    opacity: .66;
+                    -webkit-transition: opacity .33s;
+                    transition: opacity .33s;
+                }
+
+                &.black-tie > i
+                {
+                    font-family: 'Black Tie';
+                    font-weight: 400;
+                }
+
+                &.settings > i
+                {
+                    font-weight: 800;
+                    opacity: .33;
+                }
+
+                &.active
+                {
+                    > i, > em > i, > font
+                    {
+                        opacity: 1;
+                    }
+
+                    > em
+                    {
+                        margin: -.25em 0 -.2em -.25em;
+                        padding: .25em .25em .2em;
+                        background: #BB0D00;
+
+                        > i
+                        {
+                            opacity: 1;
+                        }
+
+                        > b
+                        {
+                            display: inline-block;
+                            margin: 0 .5em;
+                            vertical-align: middle;
+                            font-weight: 600;
+                            font-size: .8em;
+                        }
+                    }
+                }
+            }
+        }
+
+        > .main-menu
+        {
+            display: none;
+        }
+
+        &.main-menu
+        {
+            > .app-menu
+            {
+                display: none;
+            }
+
+            > .main-menu
+            {
+                display: block;
+
+                > .menu-item
+                {
+                    margin: 0 .75em;
+
+                    > i
+                    {
+                        opacity: .33;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Apps
+     */
+
+    > .desktop, > .apps, > .apps > .app
+    {
+        z-index: 5;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        -webkit-transition: top .5s;
+        transition: top .5s;
+    }
+
+    > .desktop, > .apps, > .apps > .app.active
+    {
+        top: 0;
+    }
+
+    > .desktop
+    {
+        z-index: 10;
+    }
+
+    > .apps.active
+    {
+        z-index: 15;
+    }
+
+    /* Desktop
+     */
+
+    > .desktop
+    {
+        background: url(../../../images/wallpaper.jpg) center repeat;
+        background-size: cover;
+
+        > .clock
+        {
+            z-index: 10;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+
+            > .clock-display
+            {
+                display: inline-block;
+                line-height: normal;
+                vertical-align: middle;
+
+                > .time
+                {
+                    font-size: 15em;
+                    line-height: 1em;
+
+                    > em
+                    {
+                        opacity: .33;
+                    }
+                }
+
+                > .weather
+                {
+                    padding: 1em 0 0;
+                    font-size: 2.8em;
+                    line-height: 1em;
+                    opacity: .66;
+
+                    .wi-right
+                    {
+                        margin: 0 .66em;
+                        opacity: .33;
+                    }
+                }
+            }
+        }
+    }
+}

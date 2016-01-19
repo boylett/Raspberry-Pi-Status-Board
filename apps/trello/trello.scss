@@ -1,0 +1,107 @@
+.springboard.app-trello > .dock:before
+{
+    background: -webkit-linear-gradient(top, rgba(#005992, .5), #005992);
+    background: linear-gradient(to bottom, rgba(#005992, .5), #005992);
+}
+
+.app.trello
+{
+    height: calc(100% + 15px) !important;
+    background: #005992;
+    white-space: nowrap;
+    overflow: auto !important;
+
+    .list-container
+    {
+        display: inline-block;
+        margin: 3em 0 0 5em;
+        width: 27.5em;
+        overflow: hidden;
+        vertical-align: top;
+
+        &:last-child
+        {
+            margin-right: 5em;
+        }
+
+        > .list
+        {
+            > h1
+            {
+                margin: 0 0 1em;
+                font-size: 3em;
+                font-weight: 500;
+            }
+
+            > h2
+            {
+                font-size: 2.4em;
+                font-weight: 400;
+                opacity: .5;
+            }
+
+            > .cards
+            {
+                margin: 1.5em -15px 0 0;
+                overflow: auto;
+                overflow-y: scroll;
+
+                > .card
+                {
+                    margin: 1em 0;
+                    padding: 1em;
+                    background: #FFF;
+                    border-radius: .33em;
+                    color: #000;
+                    box-shadow: 0 .25em .25em rgba(#000, .1);
+                    opacity: .75;
+                    -webkit-transition: opacity .5s;
+                    transition: opacity .5s;
+
+                    &.updated
+                    {
+                        opacity: 1;
+                    }
+
+                    > .name
+                    {
+                        font-size: 1.8em;
+                        font-weight: 300;
+                        white-space: normal;
+                    }
+
+                    > .badges
+                    {
+                        margin: 1.25em 0 0;
+                        font-weight: 600;
+                        opacity: .5;
+
+                        .bt
+                        {
+                            font-family: 'Black Tie';
+                        }
+
+                        .badge
+                        {
+                            display: none;
+                            margin: 0 1em 0 0;
+
+                            &.active
+                            {
+                                display: inline-block;
+                            }
+
+                            > em
+                            {
+                                display: inline-block;
+                                margin: 0 0 0 .25em;
+                                font-size: .9em;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
