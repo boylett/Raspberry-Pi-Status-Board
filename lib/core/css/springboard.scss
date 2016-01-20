@@ -229,6 +229,7 @@
             > .clock-display
             {
                 display: inline-block;
+                width: 100%;
                 line-height: normal;
                 vertical-align: middle;
 
@@ -243,17 +244,47 @@
                     }
                 }
 
-                > .weather
+                > .info
                 {
-                    padding: 1em 0 0;
-                    font-size: 2.8em;
-                    line-height: 1em;
-                    opacity: .66;
+                    padding: 3em 0 0;
 
-                    .wi-right
+                    &:after
                     {
-                        margin: 0 .66em;
-                        opacity: .33;
+                        content: "";
+                        display: block;
+                        clear: both;
+                    }
+
+                    > .date, > .weather
+                    {
+                        display: inline-block;
+                        width: 9em;
+                        margin: 0 0 1em;
+                        text-align: left;
+                        font-size: 2.8em;
+                        line-height: 1em;
+                        opacity: .66;
+                    }
+
+                    > .weather
+                    {
+                        text-align: right;
+
+                        .wi-right
+                        {
+                            margin: 0 .66em;
+                            opacity: .33;
+                        }
+
+                        .temperature
+                        {
+                            display: block;
+                            float: right;
+                            margin: 0 0 0 1.25em;
+                            font-weight: 800;
+                            font-size: .8em;
+                            opacity: .66;
+                        }
                     }
                 }
             }
