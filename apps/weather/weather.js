@@ -10,7 +10,6 @@ Springboard.Apps.weather = new App(function($this)
         $loc.Location = location;
 
         $loc.Object = $('<div class="location">').appendTo($this.Object);
-        $loc.Wallpaper = $('<div class="wallpaper">').appendTo($loc.Object);
         $loc.Weather = $('<div class="conditions">').appendTo($loc.Object);
         $loc.Forecast = $('<div class="forecast"><ul></ul></div>').appendTo($loc.Object);
 
@@ -157,32 +156,6 @@ Springboard.Apps.weather = new App(function($this)
                 }
             });
         };
-
-        if($config.flickr && $config.flickr['api-key'])
-        {
-            var xhr = $.ajax(
-            {
-                data:
-                {
-                    api_key: $config.flickr['api-key'],
-                    format: 'json',
-                    method: 'flickr.photos.search',
-                    per_page: 5,
-                    privacy_filter: 1,
-                    tags: $loc.Location.split(',')[0]
-                },
-                dataType: 'jsonp',
-                jsonpCallback: 'jsonFlickrApi',
-                url: 'https://api.flickr.com/services/rest/',
-                success: function(data)
-                {
-                    var photo = data.photos.photo[Math.floor(Math.random() * data.photos.photo.length)],
-                        url = 'https://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '.jpg';
-
-                    $loc.Wallpaper.css('background-image', 'url(' + url + ')');
-                }
-            });
-        }
     };
 
     $this.Class = 'weather';
