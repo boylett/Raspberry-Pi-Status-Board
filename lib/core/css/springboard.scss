@@ -79,6 +79,22 @@
                     opacity: .66;
                     -webkit-transition: opacity .33s;
                     transition: opacity .33s;
+
+                    &.bt
+                    {
+                        font-family: 'Black Tie';
+                        font-weight: 400;
+
+                        &.bts
+                        {
+                            font-weight: 900;
+                        }
+                    }
+
+                    &.wi
+                    {
+                        font-family: 'Weathericons';
+                    }
                 }
 
                 > em
@@ -103,12 +119,6 @@
                     opacity: .66;
                     -webkit-transition: opacity .33s;
                     transition: opacity .33s;
-                }
-
-                &.black-tie > i
-                {
-                    font-family: 'Black Tie';
-                    font-weight: 400;
                 }
 
                 &.settings > i
@@ -229,7 +239,6 @@
             > .clock-display
             {
                 display: inline-block;
-                width: 100%;
                 line-height: normal;
                 vertical-align: middle;
 
@@ -246,6 +255,8 @@
 
                 > .info
                 {
+                    display: inline-block;
+                    width: 10em;
                     padding: 3em 0 0;
 
                     &:after
@@ -257,9 +268,10 @@
 
                     > .date, > .weather
                     {
-                        display: inline-block;
-                        width: 9em;
-                        margin: 0 0 1em;
+                        display: block;
+                        float: left;
+                        width: 44%;
+                        margin: 0 3%;
                         text-align: left;
                         font-size: 2.8em;
                         line-height: 1em;
@@ -268,13 +280,13 @@
 
                     > .date
                     {
+                        float: right;
+                        text-align: right;
                         font-weight: 400;
                     }
 
                     > .weather
                     {
-                        text-align: right;
-
                         .wi-right
                         {
                             margin: 0 .66em;
@@ -283,9 +295,8 @@
 
                         .temperature
                         {
-                            display: block;
-                            float: right;
-                            margin: 0 0 0 1.25em;
+                            display: inline-block;
+                            margin-left: .5em;
                             font-weight: 800;
                             font-size: .8em;
                             opacity: .66;
