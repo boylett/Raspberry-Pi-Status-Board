@@ -160,7 +160,7 @@ Springboard.Apps.weather = new App(function($this)
 
     $this.Class = 'weather';
 
-    $this.Icon = 'bt bts bt-cloud';
+    $this.Icon = 'wi wi-day-sunny-overcast';
     $this.Name = 'Weather';
 
     $this.Locations = [];

@@ -156,6 +156,17 @@
                     }
                 }
             }
+
+            &.icons
+            {
+                > .menu-item
+                {
+                    > font
+                    {
+                        display: none;
+                    }
+                }
+            }
         }
 
         > .main-menu

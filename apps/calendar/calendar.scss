@@ -1,0 +1,234 @@
+.springboard.app-calendar > .dock:before
+{
+    background: -webkit-linear-gradient(top, rgba(#000, .1), rgba(#000, .25));
+    background: linear-gradient(to bottom, rgba(#000, .1), rgba(#000, .25));
+}
+
+.app.calendar
+{
+    > .calendar
+    {
+        &, > .month
+        {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+        }
+
+        > .month
+        {
+            display: none;
+            background: #FFF;
+
+            &.active
+            {
+                display: block;
+            }
+
+            > .label
+            {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 13em;
+                background: #000 url(months/january.jpg) no-repeat center;
+                background-size: cover;
+
+                > label
+                {
+                    position: absolute;
+                    top: 0;
+                    right: 100%;
+                    width: 100%;
+                    height: 100%;
+                    -webkit-transform-origin: top right;
+                    transform-origin: top right;
+                    -webkit-transform: rotate(-90deg);
+                    transform: rotate(-90deg);
+
+                    &:before
+                    {
+                        content: attr(month);
+                        position: absolute;
+                        bottom: .25em;
+                        left: .33em;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        font-size: 5em;
+                        color: #FFF;
+                    }
+                }
+            }
+
+            > .dates
+            {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 13em;
+                margin: 3em;
+
+                &:after
+                {
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
+
+                > .days
+                {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    display: block;
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+
+                    > .day
+                    {
+                        position: relative;
+                        display: block;
+                        float: left;
+                        width: 14.285714286%;
+                        height: 20%;
+                        color: #999;
+
+                        > label
+                        {
+                            display: block;
+                            vertical-align: middle;
+                            text-align: center;
+                            font-weight: 300;
+                            font-size: 2em;
+                        }
+                    }
+
+                    &.labels
+                    {
+                        bottom: auto;
+                        height: 6em;
+
+                        > .day
+                        {
+                            height: 6em;
+                            line-height: 6em;
+                            vertical-align: middle;
+
+                            > label
+                            {
+                                text-transform: uppercase;
+                                font-weight: 500;
+                                font-size: 1.5em;
+                                color: #BBB;
+                            }
+
+                            &.today
+                            {
+                                > label
+                                {
+                                    font-weight: 800;
+                                    color: #777;
+                                }
+                            }
+                        }
+                    }
+
+                    &.actual-days
+                    {
+                        top: 6em;
+
+                        > .day
+                        {
+                            height: 5em;
+
+                            > label
+                            {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                width: 2.5em;
+                                height: 2.5em;
+                                line-height: 2.5em;
+                                margin: -1.25em 0 0 -1.25em;
+                            }
+
+                            &.today
+                            {
+                                > label
+                                {
+                                    background: #DDD;
+                                    border-radius: 50%;
+                                    font-weight: 500;
+                                    color: #FFF;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.february > .label
+            {
+                background-image: url(months/february.jpg);
+            }
+
+            &.march > .label
+            {
+                background-image: url(months/march.jpg);
+            }
+
+            &.april > .label
+            {
+                background-image: url(months/april.jpg);
+            }
+
+            &.may > .label
+            {
+                background-image: url(months/may.jpg);
+            }
+
+            &.june > .label
+            {
+                background-image: url(months/june.jpg);
+            }
+
+            &.july > .label
+            {
+                background-image: url(months/july.jpg);
+            }
+
+            &.august > .label
+            {
+                background-image: url(months/august.jpg);
+            }
+
+            &.september > .label
+            {
+                background-image: url(months/september.jpg);
+            }
+
+            &.october > .label
+            {
+                background-image: url(months/october.jpg);
+            }
+
+            &.november > .label
+            {
+                background-image: url(months/november.jpg);
+            }
+
+            &.december > .label
+            {
+                background-image: url(months/december.jpg);
+            }
+        }
+    }
+}
